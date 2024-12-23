@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-  
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Mini Shop</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="images/favicon.svg"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/LineIcons.3.0.css" />
@@ -20,6 +15,23 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <?php
+  session_start();
+  include 'db_connect.php'; 
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+
+      $sql = "SELECT * FROM admins WHERE email = ?";
+      $stmt = $conn->prepare($sql); $stmt->bind_param("s", $email);
+    $stmt->execute(); $result = $stmt->get_result(); if ($result->num_rows ===
+    1) { $admin = $result->fetch_assoc(); if (password_verify($password,
+    $admin['password'])) { $_SESSION['admin_logged_in'] = true;
+    $_SESSION['admin_email'] = $admin['email']; header("Location: admin.php");
+    exit(); } else { $error = "Invalid email or password!"; } } else { $error =
+    "Invalid email or password!"; } } ?>
 
     <header class="header navbar-area">
       <div class="topbar">
@@ -141,25 +153,25 @@
                 >
                 <ul class="sub-category">
                   <li>
-                    <a href="product-list.html"
+                    <a href="product-list.php"
                       >Electronics <i class="lni lni-chevron-right"></i
                     ></a>
                     <ul class="inner-sub-category">
-                      <li><a href="product-list.html">Digital Cameras</a></li>
+                      <li><a href="product-list.php">Digital Cameras</a></li>
 
-                      <li><a href="product-list.html">Camera Drones</a></li>
-                      <li><a href="product-list.html">Smart Watches</a></li>
-                      <li><a href="product-list.html">Headphones</a></li>
+                      <li><a href="product-list.php">Camera Drones</a></li>
+                      <li><a href="product-list.php">Smart Watches</a></li>
+                      <li><a href="product-list.php">Headphones</a></li>
 
-                      <li><a href="product-list.html">Microphones</a></li>
+                      <li><a href="product-list.php">Microphones</a></li>
                     </ul>
                   </li>
 
-                  <li><a href="product-list.html">Computers & Tablets </a></li>
-                  <li><a href="product-list.html">Laptop </a></li>
-                  <li><a href="product-list.html">Smart Phone </a></li>
-                  <li><a href="product-list.html">Men’s Product</a></li>
-                  <li><a href="product-list.html">Watch</a></li>
+                  <li><a href="product-list.php">Computers & Tablets </a></li>
+                  <li><a href="product-list.php">Laptop </a></li>
+                  <li><a href="product-list.php">Smart Phone </a></li>
+                  <li><a href="product-list.php">Men’s Product</a></li>
+                  <li><a href="product-list.php">Watch</a></li>
                 </ul>
               </div>
 
@@ -205,9 +217,9 @@
                         <li class="nav-item">
                           <a href="about-us.html">About Us</a>
                         </li>
-                        <li class="nav-item"><a href="login.html">Login</a></li>
+                        <li class="nav-item"><a href="login.php">Login</a></li>
                         <li class="nav-item">
-                          <a href="register.html">Register</a>
+                          <a href="register.php">Register</a>
                         </li>
                       </ul>
                     </li>
@@ -224,7 +236,7 @@
                       >
                       <ul class="sub-menu collapse" id="submenu-1-3">
                         <li class="nav-item">
-                          <a href="product-list.html">All Products</a>
+                          <a href="product-list.php">All Products</a>
                         </li>
 
                         <li class="nav-item"><a href="cart.html">Cart</a></li>
@@ -242,13 +254,8 @@
                       >
                     </li>
                   </ul>
-
-
                 </div>
               </nav>
-
-
-              
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-12">
@@ -301,39 +308,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
-            <form class="card login-form" method="post">
+            <form class="card login-form" method="POST" action="login.php">
               <div class="card-body">
                 <div class="title">
                   <h3>Login Now</h3>
                   <p>
-                    You can login using your social media account or email
-                    address.
+                    Login using your email
+                    address & password
                   </p>
                 </div>
-                <div class="social-login">
-                  <div class="row">
-                    <div class="col-lg-4 col-md-4 col-12">
-                      <a class="btn facebook-btn" href="javascript:void(0)"
-                        ><i class="lni lni-facebook-filled"></i> Facebook
-                        login</a
-                      >
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                      <a class="btn twitter-btn" href="javascript:void(0)"
-                        ><i class="lni lni-twitter-original"></i> Twitter
-                        login</a
-                      >
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                      <a class="btn google-btn" href="javascript:void(0)"
-                        ><i class="lni lni-google"></i> Google login</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="alt-option">
-                  <span>Or</span>
-                </div>
+              
                 <div class="form-group input-group">
                   <label for="reg-fn">Email</label>
                   <input
@@ -372,7 +356,7 @@
                 </div>
                 <p class="outer-link">
                   Don't have an account?
-                  <a href="register.html">Register here </a>
+                  <a href="register.php">Register here </a>
                 </p>
               </div>
             </form>
@@ -386,49 +370,6 @@
         <div class="container"></div>
       </div>
 
-      <div class="footer-middle">
-        <div class="container">
-          <div class="bottom-inner">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-12">
-                <div class="single-footer f-contact">
-                  <h3>Get In Touch With Us</h3>
-                  <p class="phone">Phone: +(880) 1886 433 466</p>
-                  <ul>
-                    <li><span>Monday-Friday: </span> 9.00 am - 8.00 pm</li>
-                    <li><span>Saturday: </span> 10.00 am - 6.00 pm</li>
-                  </ul>
-                  <p class="mail1">
-                    <a href=""
-                      ><span class="" data-cfemail=""
-                        >Jahidulzaid@gmail.com</span
-                      ></a
-                    >
-                  </p>
-                  <p class="mail2">
-                    <a href=""
-                      ><span class="" data-cfemail=""
-                        >OmorFaruk@gmail.com</span
-                      ></a
-                    >
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-lg-6 col-md-6 col-12">
-                <div class="single-footer f-link">
-                  <h3>Information</h3>
-                  <ul>
-                    <li><a href="javascript:void(0)">About Us</a></li>
-                    <li><a href="javascript:void(0)">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div class="container">
           <div class="inner-content">
@@ -436,10 +377,7 @@
               <div class="col-lg-4 col-12">
                 <div class="payment-gateway">
                   <span>We Accept:</span>
-                  <img
-                    src="images/footer/credit-cards-footer.png"
-                    alt="#"
-                  />
+                  <img src="images/footer/credit-cards-footer.png" alt="#" />
                 </div>
               </div>
               <div class="col-lg-4 col-12">
@@ -504,6 +442,4 @@
     <script src="js/glightbox.min.js"></script>
     <script src="js/main.js"></script>
   </body>
-
-
 </html>

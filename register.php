@@ -6,11 +6,7 @@
     <title>Register - Mini Shop</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="images/favicon.svg"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/LineIcons.3.0.css" />
@@ -203,9 +199,9 @@
                         <li class="nav-item">
                           <a href="about-us.html">About Us</a>
                         </li>
-                        <li class="nav-item"><a href="login.html">Login</a></li>
+                        <li class="nav-item"><a href="login.php">Login</a></li>
                         <li class="nav-item">
-                          <a href="register.html">Register</a>
+                          <a href="register.php">Register</a>
                         </li>
                       </ul>
                     </li>
@@ -302,7 +298,36 @@
                   control over your orders.
                 </p>
               </div>
-              <form class="row" method="post">
+
+              <?php 
+              include 'db_connect.php';
+
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $first_name = $_POST['first_name'];
+              $last_name = $_POST['last_name'];
+              $email = $_POST['email'];
+              $phone_number = $_POST['phone_number'];
+              $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+
+              $sql = "INSERT INTO users (first_name, last_name, email, phone_number, password) 
+                      VALUES ('$first_name', '$last_name', '$email', '$phone_number', '$password')";
+
+              if ($conn->query($sql) === TRUE) {
+                  echo "Registration successful!";
+              } else {
+                  echo "Error: " . $sql . "<br>" . $conn->error;
+              }
+
+              $conn->close();
+          }
+          ?>
+
+
+
+
+
+
+              <form class="row" method="post" action="register.php">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="reg-fn">First Name</label>
@@ -310,6 +335,7 @@
                       class="form-control"
                       type="text"
                       id="reg-fn"
+                      name="first_name"
                       required
                     />
                   </div>
@@ -321,6 +347,7 @@
                       class="form-control"
                       type="text"
                       id="reg-ln"
+                      name="last_name"
                       required
                     />
                   </div>
@@ -332,6 +359,7 @@
                       class="form-control"
                       type="email"
                       id="reg-email"
+                      name="email"
                       required
                     />
                   </div>
@@ -343,6 +371,7 @@
                       class="form-control"
                       type="text"
                       id="reg-phone"
+                      name="phone_number"
                       required
                     />
                   </div>
@@ -354,6 +383,7 @@
                       class="form-control"
                       type="password"
                       id="reg-pass"
+                      name="password"
                       required
                     />
                   </div>
@@ -365,6 +395,7 @@
                       class="form-control"
                       type="password"
                       id="reg-pass-confirm"
+                      name="confirm_password"
                       required
                     />
                   </div>
@@ -373,7 +404,7 @@
                   <button class="btn" type="submit">Register</button>
                 </div>
                 <p class="outer-link">
-                  Already have an account? <a href="login.html">Login Now</a>
+                  Already have an account? <a href="login.php">Login Now</a>
                 </p>
               </form>
             </div>
@@ -437,10 +468,7 @@
               <div class="col-lg-4 col-12">
                 <div class="payment-gateway">
                   <span>We Accept:</span>
-                  <img
-                    src="images/footer/credit-cards-footer.png"
-                    alt="#"
-                  />
+                  <img src="images/footer/credit-cards-footer.png" alt="#" />
                 </div>
               </div>
               <div class="col-lg-4 col-12">

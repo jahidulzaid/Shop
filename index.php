@@ -28,22 +28,24 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-3 col-md-3 col-7">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" href="index.php">
                 <img src="images/logo/logo.svg" alt="Logo" />
               </a>
             </div>
             <!-- search -->
             <div class="col-lg-5 col-md-7 d-xs-none">
-              <div class="main-menu-search">
-                <div class="navbar-search search-style-5">
-                  <div class="search-input">
-                    <input type="text" placeholder="Search" />
-                  </div>
-                  <div class="search-btn">
-                    <button><i class="lni lni-search-alt"></i></button>
-                  </div>
+            <div class="main-menu-search">
+                <form method="GET" action="search_product.php" class="navbar-search search-style-5">
+                <div class="search-input">
+                    <input type="text" name="query" placeholder="Search" required />
                 </div>
-              </div>
+                <div class="search-btn">
+                    <button type="submit">
+                    <i class="lni lni-search-alt"></i>
+                    </button>
+                </div>
+                </form>
+            </div>
             </div>
 
             <div class="col-lg-4 col-md-2 col-5">
@@ -138,25 +140,25 @@
                 >
                 <ul class="sub-category">
                   <li>
-                    <a href="product-list.html"
+                    <a href="product-list.php"
                       >Electronics <i class="lni lni-chevron-right"></i
                     ></a>
                     <ul class="inner-sub-category">
-                      <li><a href="product-list.html">Digital Cameras</a></li>
+                      <li><a href="product-list.php">Digital Cameras</a></li>
 
-                      <li><a href="product-list.html">Camera Drones</a></li>
-                      <li><a href="product-list.html">Smart Watches</a></li>
-                      <li><a href="product-list.html">Headphones</a></li>
+                      <li><a href="product-list.php">Camera Drones</a></li>
+                      <li><a href="product-list.php">Smart Watches</a></li>
+                      <li><a href="product-list.php">Headphones</a></li>
 
-                      <li><a href="product-list.html">Microphones</a></li>
+                      <li><a href="product-list.php">Microphones</a></li>
                     </ul>
                   </li>
 
-                  <li><a href="product-list.html">Computers & Tablets </a></li>
-                  <li><a href="product-list.html">Laptop </a></li>
-                  <li><a href="product-list.html">Smart Phone </a></li>
-                  <li><a href="product-list.html">Food</a></li>
-                  <li><a href="product-list.html">Cloth</a></li>
+                  <li><a href="product-list.php">Computers & Tablets </a></li>
+                  <li><a href="product-list.php">Laptop </a></li>
+                  <li><a href="product-list.php">Smart Phone </a></li>
+                  <li><a href="product-list.php">Food</a></li>
+                  <li><a href="product-list.php">Cloth</a></li>
                 </ul>
               </div>
 
@@ -181,7 +183,7 @@
                   <ul id="nav" class="navbar-nav ms-auto">
                     <li class="nav-item">
                       <a
-                        href="index.html"
+                        href="index.php"
                         class="active"
                         aria-label="Toggle navigation"
                         >Home</a
@@ -202,9 +204,9 @@
                         <li class="nav-item">
                           <a href="about-us.html">About Us</a>
                         </li>
-                        <li class="nav-item"><a href="login.html">Login</a></li>
+                        <li class="nav-item"><a href="login.php">Login</a></li>
                         <li class="nav-item">
-                          <a href="register.html">Register</a>
+                          <a href="register.php">Register</a>
                         </li>
                       </ul>
                     </li>
@@ -221,7 +223,7 @@
                       >
                       <ul class="sub-menu collapse" id="submenu-1-3">
                         <li class="nav-item">
-                          <a href="product-list.html">All Products</a>
+                          <a href="product-list.php">All Products</a>
                         </li>
 
                         <li class="nav-item"><a href="cart.html">Cart</a></li>
@@ -269,6 +271,7 @@
       </div>
     </header>
 
+
     <section class="hero-area">
       <div class="container">
         <div class="row">
@@ -295,7 +298,7 @@
                     </p>
                     <h3><span>Now Only</span> ৳320.99</h3>
                     <div class="button">
-                      <a href="product-list.html" class="btn">Shop Now</a>
+                      <a href="product-list.php" class="btn">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -317,7 +320,7 @@
                     </p>
                     <h3><span>Now Only</span> ৳320.99</h3>
                     <div class="button">
-                      <a href="product-list.html" class="btn">Shop Now</a>
+                      <a href="product-list.php" class="btn">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -339,7 +342,7 @@
                     </p>
                     <h3><span>Combo Only:</span> ৳590.00</h3>
                     <div class="button">
-                      <a href="product-list.html" class="btn">Shop Now</a>
+                      <a href="product-list.php" class="btn">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -372,7 +375,7 @@
                       Saving up to 50% off all online store items this week.
                     </p>
                     <div class="button">
-                      <a class="btn" href="product-list.html">Shop Now</a>
+                      <a class="btn" href="product-list.php">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -401,11 +404,11 @@
             <div class="single-category">
               <h3 class="heading">TV & Audios</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -419,11 +422,11 @@
             <div class="single-category">
               <h3 class="heading">Desktop & Laptop</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -437,11 +440,11 @@
             <div class="single-category">
               <h3 class="heading">Cctv Camera</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -455,11 +458,11 @@
             <div class="single-category">
               <h3 class="heading">Dslr Camera</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -473,11 +476,11 @@
             <div class="single-category">
               <h3 class="heading">Smart Phones</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -491,11 +494,11 @@
             <div class="single-category">
               <h3 class="heading">Game Console</h3>
               <ul>
-                <li><a href="product-list.html">Smart Television</a></li>
-                <li><a href="product-list.html">QLED TV</a></li>
-                <li><a href="product-list.html">Audios</a></li>
-                <li><a href="product-list.html">Headphones</a></li>
-                <li><a href="product-list.html">View All</a></li>
+                <li><a href="product-list.php">Smart Television</a></li>
+                <li><a href="product-list.php">QLED TV</a></li>
+                <li><a href="product-list.php">Audios</a></li>
+                <li><a href="product-list.php">Headphones</a></li>
+                <li><a href="product-list.php">View All</a></li>
               </ul>
               <div class="images">
                 <img
@@ -536,7 +539,7 @@
               <div class="product-info">
                 <span class="category">Watches</span>
                 <h4 class="title">
-                  <a href="product-list.html">Xiaomi Mi Band 5</a>
+                  <a href="product-list.php">Xiaomi Mi Band 5</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -566,7 +569,7 @@
               <div class="product-info">
                 <span class="category">Speaker</span>
                 <h4 class="title">
-                  <a href="product-list.html">Big Power Sound Speaker</a>
+                  <a href="product-list.php">Big Power Sound Speaker</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -596,7 +599,7 @@
               <div class="product-info">
                 <span class="category">Camera</span>
                 <h4 class="title">
-                  <a href="product-list.html">WiFi Security Camera</a>
+                  <a href="product-list.php">WiFi Security Camera</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -626,7 +629,7 @@
               <div class="product-info">
                 <span class="category">Phones</span>
                 <h4 class="title">
-                  <a href="product-list.html">iphone 6x plus</a>
+                  <a href="product-list.php">iphone 6x plus</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -655,7 +658,7 @@
               <div class="product-info">
                 <span class="category">Headphones</span>
                 <h4 class="title">
-                  <a href="product-list.html">Wireless Headphones</a>
+                  <a href="product-list.php">Wireless Headphones</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -684,7 +687,7 @@
               <div class="product-info">
                 <span class="category">Speaker</span>
                 <h4 class="title">
-                  <a href="product-list.html">Mini Bluetooth Speaker</a>
+                  <a href="product-list.php">Mini Bluetooth Speaker</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -714,7 +717,7 @@
               <div class="product-info">
                 <span class="category">Headphones</span>
                 <h4 class="title">
-                  <a href="product-list.html">PX7 Wireless Headphones</a>
+                  <a href="product-list.php">PX7 Wireless Headphones</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -744,7 +747,7 @@
               <div class="product-info">
                 <span class="category">Laptop</span>
                 <h4 class="title">
-                  <a href="product-list.html">Apple MacBook Air</a>
+                  <a href="product-list.php">Apple MacBook Air</a>
                 </h4>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
@@ -780,7 +783,7 @@
                   Space Gray Aluminum Case with <br />Black/Volt Real Sport Band
                 </p>
                 <div class="button">
-                  <a href="product-list.html" class="btn">View Details</a>
+                  <a href="product-list.php" class="btn">View Details</a>
                 </div>
               </div>
             </div>
@@ -799,7 +802,7 @@
                   labore.
                 </p>
                 <div class="button">
-                  <a href="product-list.html" class="btn">Shop Now</a>
+                  <a href="product-list.php" class="btn">Shop Now</a>
                 </div>
               </div>
             </div>
@@ -837,7 +840,7 @@
                   <div class="product-info">
                     <span class="category">Camera</span>
                     <h4 class="title">
-                      <a href="product-list.html">WiFi Security Camera</a>
+                      <a href="product-list.php">WiFi Security Camera</a>
                     </h4>
                     <ul class="review">
                       <li><i class="lni lni-star-filled"></i></li>
@@ -866,7 +869,7 @@
                   <div class="product-info">
                     <span class="category">Laptop</span>
                     <h4 class="title">
-                      <a href="product-list.html">Apple MacBook Air</a>
+                      <a href="product-list.php">Apple MacBook Air</a>
                     </h4>
                     <ul class="review">
                       <li><i class="lni lni-star-filled"></i></li>
@@ -895,7 +898,7 @@
                   <div class="product-info">
                     <span class="category">Speaker</span>
                     <h4 class="title">
-                      <a href="product-list.html">Bluetooth Speaker</a>
+                      <a href="product-list.php">Bluetooth Speaker</a>
                     </h4>
                     <ul class="review">
                       <li><i class="lni lni-star-filled"></i></li>
@@ -930,7 +933,7 @@
                   <span>৳590.00</span>
                 </div>
                 <div class="button">
-                  <a href="product-list.html" class="btn">Shop Now</a>
+                  <a href="product-list.php" class="btn">Shop Now</a>
                 </div>
               </div>
             </div>
@@ -942,7 +945,7 @@
                 <span class="sale-tag">-50%</span>
               </div>
               <div class="text">
-                <h2><a href="product-list.html">Bluetooth Headphone</a></h2>
+                <h2><a href="product-list.php">Bluetooth Headphone</a></h2>
                 <ul class="review">
                   <li><i class="lni lni-star-filled"></i></li>
                   <li><i class="lni lni-star-filled"></i></li>
@@ -997,13 +1000,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/01.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">GoPro Hero4 Silver</a>
+                  <a href="product-list.php">GoPro Hero4 Silver</a>
                 </h3>
                 <span>৳287.99</span>
               </div>
@@ -1011,13 +1014,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/02.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">Puro Sound Labs BT2200</a>
+                  <a href="product-list.php">Puro Sound Labs BT2200</a>
                 </h3>
                 <span>৳95.00</span>
               </div>
@@ -1025,13 +1028,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/03.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">HP OfficeJet Pro 8710</a>
+                  <a href="product-list.php">HP OfficeJet Pro 8710</a>
                 </h3>
                 <span>৳120.00</span>
               </div>
@@ -1042,13 +1045,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/04.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">iPhone X 256 GB Space Gray</a>
+                  <a href="product-list.php">iPhone X 256 GB Space Gray</a>
                 </h3>
                 <span>৳1150.00</span>
               </div>
@@ -1056,13 +1059,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/05.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html"
+                  <a href="product-list.php"
                     >Canon EOS M50 Mirrorless Camera</a
                   >
                 </h3>
@@ -1072,13 +1075,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/06.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">Microsoft Xbox One S</a>
+                  <a href="product-list.php">Microsoft Xbox One S</a>
                 </h3>
                 <span>৳298.00</span>
               </div>
@@ -1089,13 +1092,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/07.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">Samsung Gear 360 VR Camera</a>
+                  <a href="product-list.php">Samsung Gear 360 VR Camera</a>
                 </h3>
                 <span>৳68.00</span>
               </div>
@@ -1103,13 +1106,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/08.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">Samsung Galaxy S9+ 64 GB</a>
+                  <a href="product-list.php">Samsung Galaxy S9+ 64 GB</a>
                 </h3>
                 <span>৳840.00</span>
               </div>
@@ -1117,13 +1120,13 @@
 
             <div class="single-list">
               <div class="list-image">
-                <a href="product-list.html"
+                <a href="product-list.php"
                   ><img src="images/home-product-list/09.jpg" alt="#"
                 /></a>
               </div>
               <div class="list-info">
                 <h3>
-                  <a href="product-list.html">Zeus Bluetooth Headphones</a>
+                  <a href="product-list.php">Zeus Bluetooth Headphones</a>
                 </h3>
                 <span>৳28.00</span>
               </div>
