@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <?php
+  <?php
     include 'header.php';  
   ?>
     <div class="breadcrumbs">
@@ -59,60 +59,7 @@
           </div>
           <div class="contact-info">
             <div class="row">
-              <div class="col-lg-4 col-md-12 col-12">
-                <div class="single-info-head">
-                  <div class="single-info">
-                    <i class="lni lni-map"></i>
-                    <h3>Address</h3>
-                    <ul>
-                      <li>
-                        44 Shirley Ave. West Chicago,<br />
-                        IL 60185, USA.
-                      </li>
-                    </ul>
-                  </div>
 
-                  <div class="single-info">
-                    <i class="lni lni-phone"></i>
-                    <h3>Call us on</h3>
-                    <ul>
-                      <li>
-                        <a href="tel:+18005554400"
-                          >+1 800 555 44 00 (Toll free)</a
-                        >
-                      </li>
-                      <li><a href="tel:+321556667890">+321 55 666 7890</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="single-info">
-                    <i class="lni lni-envelope"></i>
-                    <h3>Mail at</h3>
-                    <ul>
-                      <li>
-                        <a
-                          href="https://demo.graygrids.com/cdn-cgi/l/email-protection#81f2f4f1f1eef3f5c1f2e9eef1e6f3e8e5f2afe2eeec"
-                          ><span
-                            class="__cf_email__"
-                            data-cfemail="483b3d3838273a3c083b2027382f3a212c3b662b2725"
-                            >[email&#160;protected]</span
-                          ></a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="https://demo.graygrids.com/cdn-cgi/l/email-protection#3b585a495e5e497b4853544b5c49525f4815585456"
-                          ><span
-                            class="__cf_email__"
-                            data-cfemail="3b585a495e5e497b4853544b5c49525f4815585456"
-                            >[email&#160;protected]</span
-                          ></a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
               <div class="col-lg-8 col-md-12 col-12">
                 <div class="contact-form-head">
                   <div class="form-main">

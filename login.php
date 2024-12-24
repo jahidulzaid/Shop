@@ -80,8 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form class="card login-form" method="POST" action="login.php">
               <div class="card-body">
                 <div class="title">
-                  <h3>Login Now</h3>
-                  <p>
+                  <h2 class="align-center" >Admin Panel</h2>
+                  <h3 class="align-center">Login Now</h3>
+                  <p class="align-center">
                     Login using your email
                     address & password
                   </p>

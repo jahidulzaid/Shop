@@ -1,3 +1,12 @@
+<?php
+include 'db_connect.php';
+
+$sql = "SELECT id, name, category, description, image_url, price, rating, reviews FROM products";
+$result = $conn->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
   <head>
@@ -22,12 +31,12 @@
     include 'header.php';  
   ?>
 
-
     <section class="hero-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-12 custom-padding-right">
             <div class="slider-head">
+
               <div class="hero-slider">
                 <div
                   class="single-slider"
@@ -98,6 +107,7 @@
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
           <div class="col-lg-4 col-12">
@@ -137,132 +147,6 @@
       </div>
     </section>
 
-    <section class="featured-categories section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>Featured Categories</h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">TV & Audios</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-1.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">Desktop & Laptop</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-2.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">Cctv Camera</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-3.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">Dslr Camera</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-4.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">Smart Phones</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-5.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-category">
-              <h3 class="heading">Game Console</h3>
-              <ul>
-                <li><a href="product-list.php">Smart Television</a></li>
-                <li><a href="product-list.php">QLED TV</a></li>
-                <li><a href="product-list.php">Audios</a></li>
-                <li><a href="product-list.php">Headphones</a></li>
-                <li><a href="product-list.php">View All</a></li>
-              </ul>
-              <div class="images">
-                <img
-                  src="images/featured-categories/fetured-item-6.png"
-                  alt="#"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="trending-product section">
       <div class="container">
         <div class="row">
@@ -277,244 +161,54 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-1.jpg" alt="#" />
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
+          
+    <?php if ($result->num_rows > 0): ?>
+        <?php while ($product = $result->fetch_assoc()): ?>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-product">
+                    <div class="product-image">
+                        <img src="<?= htmlspecialchars($product['image_url']); ?>" alt="<?= htmlspecialchars($product['name']); ?>" />
+                        <div class="button">
+                            <a href="product-details.php?id=<?= $product['id']; ?>" class="btn">
+                                <i class="lni lni-cart"></i> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="category"><?= htmlspecialchars($product['category']); ?></span>
+                        <h4 class="title">
+                            <a href="product-details.php?id=<?= $product['id']; ?>">
+                                <?= htmlspecialchars($product['name']); ?>
+                            </a>
+                        </h4>
+                        <ul class="review">
+                            <?php
+                            $fullStars = floor($product['rating']);
+                            $emptyStars = 5 - $fullStars;
+                            for ($i = 0; $i < $fullStars; $i++) echo '<li><i class="lni lni-star-filled"></i></li>';
+                            for ($i = 0; $i < $emptyStars; $i++) echo '<li><i class="lni lni-star"></i></li>';
+                            ?>
+                            <li><span><?= htmlspecialchars(number_format($product['rating'], 1)); ?> Review(s)</span></li>
+                        </ul>
+                        <div class="price">
+                            <span>৳<?= htmlspecialchars(number_format($product['price'], 2)); ?></span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Watches</span>
-                <h4 class="title">
-                  <a href="product-list.php">Xiaomi Mi Band 5</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star"></i></li>
-                  <li><span>4.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳199.00</span>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-2.jpg" alt="#" />
-                <span class="sale-tag">-25%</span>
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Speaker</span>
-                <h4 class="title">
-                  <a href="product-list.php">Big Power Sound Speaker</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><span>5.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳275.00</span>
-                  <span class="discount-price">৳300.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-3.jpg" alt="#" />
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Camera</span>
-                <h4 class="title">
-                  <a href="product-list.php">WiFi Security Camera</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><span>5.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳399.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-4.jpg" alt="#" />
-                <span class="new-tag">New</span>
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Phones</span>
-                <h4 class="title">
-                  <a href="product-list.php">iphone 6x plus</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><span>5.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳400.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-5.jpg" alt="#" />
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Headphones</span>
-                <h4 class="title">
-                  <a href="product-list.php">Wireless Headphones</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><span>5.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳350.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-6.jpg" alt="#" />
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Speaker</span>
-                <h4 class="title">
-                  <a href="product-list.php">Mini Bluetooth Speaker</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star"></i></li>
-                  <li><span>4.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳70.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-7.jpg" alt="#" />
-                <span class="sale-tag">-50%</span>
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Headphones</span>
-                <h4 class="title">
-                  <a href="product-list.php">PX7 Wireless Headphones</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star"></i></li>
-                  <li><span>4.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳100.00</span>
-                  <span class="discount-price">৳200.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="single-product">
-              <div class="product-image">
-                <img src="images/products/product-8.jpg" alt="#" />
-                <div class="button">
-                  <a href="product-details.html" class="btn"
-                    ><i class="lni lni-cart"></i> Add to Cart</a
-                  >
-                </div>
-              </div>
-              <div class="product-info">
-                <span class="category">Laptop</span>
-                <h4 class="title">
-                  <a href="product-list.php">Apple MacBook Air</a>
-                </h4>
-                <ul class="review">
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><i class="lni lni-star-filled"></i></li>
-                  <li><span>5.0 Review(s)</span></li>
-                </ul>
-                <div class="price">
-                  <span>৳899.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <div class="col-12">
+            <p class="text-center">No products available.</p>
         </div>
+    <?php endif; ?>
+</div>
+
+<?php
+$conn->close();
+?>
+
+
       </div>
     </section>
 
@@ -576,6 +270,9 @@
           </div>
         </div>
         <div class="row">
+
+
+
           <div class="col-lg-8 col-md-12 col-12">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-12">
@@ -689,6 +386,10 @@
               </div>
             </div>
           </div>
+
+
+
+
           <div class="col-lg-4 col-md-12 col-12">
             <div class="offer-content">
               <div class="image">
@@ -901,6 +602,7 @@
           </div>
         </div>
         <div class="row">
+          
           <div class="col-lg-4 col-md-6 col-12">
             <div class="single-blog">
               <div class="blog-img">
@@ -925,6 +627,8 @@
               </div>
             </div>
           </div>
+
+
           <div class="col-lg-4 col-md-6 col-12">
             <div class="single-blog">
               <div class="blog-img">

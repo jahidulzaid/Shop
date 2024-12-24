@@ -1,4 +1,56 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+include 'db_connect.php';
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $conn->real_escape_string($_POST['name']);
+    $category = $conn->real_escape_string($_POST['category']);
+    $description = $conn->real_escape_string($_POST['description']);
+    $price = (float) $_POST['price'];
+    $rating = 0.0; 
+    $reviews = 0; 
+
+
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $imageTmpPath = $_FILES['image']['tmp_name'];
+        $imageName = basename($_FILES['image']['name']);
+        $uploadDir = 'uploads/';
+        $imagePath = $uploadDir . $imageName;
+
+
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        if (move_uploaded_file($imageTmpPath, $imagePath)) {
+
+            $stmt = $conn->prepare("INSERT INTO products (name, category, description, image_url, price, rating, reviews) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssddi", $name, $category, $description, $imagePath, $price, $rating, $reviews);
+
+            if ($stmt->execute()) {
+                $successMessage = "Product added successfully!";
+            } else {
+                $errorMessage = "Error: " . $stmt->error;
+            }
+
+            $stmt->close();
+        } else {
+            $errorMessage = "Failed to upload image.";
+        }
+    } else {
+        $errorMessage = "Please upload a valid image.";
+    }
+}
+
+$conn->close();
+?>
 
 
 <!DOCTYPE html>
@@ -60,6 +112,7 @@
                         <input type="file" class="form-control" id="image" name="image" required>
                     </div>
                     <button type="submit" class="btn btn-success">Add Product</button>
+                    <button type="submit" class="btn  text-white"><a href="admin.php">Back to Admin Panel</a></button>
                 </form>
             </div>
         </div>

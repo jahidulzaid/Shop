@@ -182,7 +182,7 @@
                       >
                       <ul class="sub-menu collapse" id="submenu-1-2">
                         <li class="nav-item">
-                          <a href="about-us.html">About Us</a>
+                          <a href="about-us.php">About Us</a>
                         </li>
                         <li class="nav-item"><a href="login.php">Login</a></li>
                         <li class="nav-item">
@@ -212,11 +212,9 @@
                         </li>
                       </ul>
                     </li>
+
                     <li class="nav-item">
-                      <a href="blog-sidebar.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="contact.html" aria-label="Toggle navigation"
+                      <a href="contact.php" aria-label="Toggle navigation"
                         >Contact Us</a
                       >
                     </li>

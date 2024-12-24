@@ -1,8 +1,8 @@
 -- Create database
-CREATE DATABASE registration;
+CREATE DATABASE minishop;
 
 -- Use the database
-USE registration;
+USE minishop;
 
 -- Create table
 CREATE TABLE users (
@@ -40,3 +40,14 @@ CREATE TABLE admins (
 
 INSERT INTO admins (email, password) 
 VALUES ('admin@admin.com', PASSWORD('cse302'));
+
+
+
+CREATE TABLE news (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
