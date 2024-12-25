@@ -16,7 +16,7 @@
   </head>
   <body>
   <?php
-    include 'header.php';  
+    include 'header.php';
   ?>
 
     <div class="breadcrumbs">
@@ -30,7 +30,7 @@
           <div class="col-lg-6 col-md-6 col-12">
             <ul class="breadcrumb-nav">
               <li>
-                <a href="index.html"><i class="lni lni-home"></i> Home</a>
+                <a href="index.php"><i class="lni lni-home"></i> Home</a>
               </li>
               <li>Registration</li>
             </ul>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'db_connect.php';
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     exit();
 }
 
-include 'db_connect.php';
+
 
 
 if (isset($_GET['id'])) {

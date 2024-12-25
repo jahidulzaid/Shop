@@ -34,7 +34,7 @@
           <div class="col-lg-6 col-md-6 col-12">
             <ul class="breadcrumb-nav">
               <li>
-                <a href="index.html"><i class="lni lni-home"></i> Home</a>
+                <a href="index.php"><i class="lni lni-home"></i> Home</a>
               </li>
               <li><a href="javascript:void(0)">Shop</a></li>
               <li>Shop Grid</li>
@@ -148,7 +148,7 @@
                                     <div class="product-image">
                                         <img src="' . $row['image_url'] . '" alt="' . $row['NAME'] . '" />
                                         <div class="button">
-                                            <a href="product-details.html" class="btn">
+                                            <a href="product-details.php?id=' . $row['id'] . '" class="btn">
                                                 <i class="lni lni-cart"></i> Add to Cart
                                             </a>
                                         </div>
@@ -156,7 +156,7 @@
                                     <div class="product-info">
                                         <span class="category">' . $row['category'] . '</span>
                                         <h4 class="title">
-                                            <a href="product-list.php">' . $row['NAME'] . '</a>
+                                            <a href="product-list.php?id=' . $row['id'] . '">' . $row['NAME'] . '</a>
                                         </h4>
                                         <ul class="review">';
                             for ($i = 0; $i < floor($row['rating']); $i++) {
@@ -246,7 +246,7 @@ if ($result->num_rows > 0) {
                 <div class="product-image">
                   <img src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['NAME']) . '" />
                   <div class="button">
-                    <a href="product-details.html" class="btn">
+                    <a href="product-details.php" class="btn">
                       <i class="lni lni-cart"></i> Add to Cart
                     </a>
                   </div>
@@ -295,25 +295,7 @@ $conn->close();
 
                     
                   </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="pagination left">
-                        <ul class="pagination-list">
-                          <li><a href="javascript:void(0)">1</a></li>
-                          <li class="active">
-                            <a href="javascript:void(0)">2</a>
-                          </li>
-                          <li><a href="javascript:void(0)">3</a></li>
-                          <li><a href="javascript:void(0)">4</a></li>
-                          <li>
-                            <a href="javascript:void(0)"
-                              ><i class="lni lni-chevron-right"></i
-                            ></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
 
 
@@ -333,7 +315,7 @@ $conn->close();
             <div class="row">
               <div class="col-lg-3 col-md-4 col-12">
                 <div class="footer-logo">
-                  <a href="index.html">
+                  <a href="index.php">
                     <img src="images/logo/white-logo.svg" alt="#" />
                   </a>
                 </div>

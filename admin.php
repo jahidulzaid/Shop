@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'db_connect.php';
 
 
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
@@ -7,7 +7,6 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     exit();
 }
 
-include 'db_connect.php'; // Include database connection
 
 $sql = "SELECT * FROM products ORDER BY created_at DESC";
 $result = $conn->query($sql);
@@ -35,15 +34,15 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-    <!-- Header -->
+
     <?php include 'header.php'; ?>
 
-    <!-- Main Content -->
+
     <div class="container mt-4">
         <h1 class="text-center mb-4">Admin Panel</h1>
 
         <div class="row menu-container">
-            <!-- Add Product -->
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card menu-card">
                     <div class="card-body text-center">
@@ -53,17 +52,17 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </div>
-            <!-- Manage Products -->
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card menu-card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Manage Products</h5>
-                        <p class="card-text">View, edit, or delete existing products.</p>
+                        <p class="card-text">View, Update, or delete existing products from the list.</p>
                         <a href="manage_products.php" class="btn btn-primary">Go to Manage Products</a>
                     </div>
                 </div>
             </div>
-            <!-- View Reports -->
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card menu-card">
                     <div class="card-body text-center">
@@ -73,13 +72,20 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </div>
+
+                <div class="card menu-card">
+                    <div class="card-body text-center">
+                        <a href="logout.php" class="btn btn-danger">Logout</a>
+                    </div>
+                </div>
+
         </div>
     </div>
 
-    <!-- Footer -->
+
+
     <?php include 'footer.php'; ?>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

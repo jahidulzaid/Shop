@@ -1,12 +1,12 @@
 <?php
-session_start();
+include 'db_connect.php';
 
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
     header("Location: login.php");
     exit();
 }
 
-include 'db_connect.php';
+
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

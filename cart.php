@@ -1,3 +1,7 @@
+<?php
+include 'db_connect.php';
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
   <head>
@@ -34,9 +38,9 @@
           <div class="col-lg-6 col-md-6 col-12">
             <ul class="breadcrumb-nav">
               <li>
-                <a href="index.html"><i class="lni lni-home"></i> Home</a>
+                <a href="index.php"><i class="lni lni-home"></i> Home</a>
               </li>
-              <li><a href="index.html">Shop</a></li>
+              <li><a href="index.php">Shop</a></li>
               <li>Cart</li>
             </ul>
           </div>
@@ -71,13 +75,13 @@
           <div class="cart-single-list">
             <div class="row align-items-center">
               <div class="col-lg-1 col-md-1 col-12">
-                <a href="product-details.html"
+                <a href="product-details.php"
                   ><img src="images/cart/01.jpg" alt="#"
                 /></a>
               </div>
               <div class="col-lg-4 col-md-3 col-12">
                 <h5 class="product-name">
-                  <a href="product-details.html">
+                  <a href="product-details.php">
                     Canon EOS M50 Mirrorless Camera</a
                   >
                 </h5>
@@ -111,91 +115,7 @@
             </div>
           </div>
 
-          <div class="cart-single-list">
-            <div class="row align-items-center">
-              <div class="col-lg-1 col-md-1 col-12">
-                <a href="product-details.html"
-                  ><img src="images/cart/02.jpg" alt="#"
-                /></a>
-              </div>
-              <div class="col-lg-4 col-md-3 col-12">
-                <h5 class="product-name">
-                  <a href="product-details.html">
-                    Apple iPhone X 256 GB Space Gray</a
-                  >
-                </h5>
-                <p class="product-des">
-                  <span><em>Memory:</em> 256 GB</span>
-                  <span><em>Color:</em> Space Gray</span>
-                </p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <div class="count-input">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>৳1100.00</p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>—</p>
-              </div>
-              <div class="col-lg-1 col-md-2 col-12">
-                <a class="remove-item" href="javascript:void(0)"
-                  ><i class="lni lni-close"></i
-                ></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="cart-single-list">
-            <div class="row align-items-center">
-              <div class="col-lg-1 col-md-1 col-12">
-                <a href="product-details.html"
-                  ><img src="images/cart/03.jpg" alt="#"
-                /></a>
-              </div>
-              <div class="col-lg-4 col-md-3 col-12">
-                <h5 class="product-name">
-                  <a href="product-details.html"
-                    >HP LaserJet Pro Laser Printer</a
-                  >
-                </h5>
-                <p class="product-des">
-                  <span><em>Type:</em> Laser</span>
-                  <span><em>Color:</em> White</span>
-                </p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <div class="count-input">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>৳550.00</p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>—</p>
-              </div>
-              <div class="col-lg-1 col-md-2 col-12">
-                <a class="remove-item" href="javascript:void(0)"
-                  ><i class="lni lni-close"></i
-                ></a>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="row">
           <div class="col-12">
@@ -222,7 +142,7 @@
                       <li class="last">You Pay<span>৳2531.00</span></li>
                     </ul>
                     <div class="button">
-                      <a href="checkout.html" class="btn">Checkout</a>
+                      <a href="checkout.php" class="btn">Checkout</a>
                       <a href="product-list.php" class="btn btn-alt"
                         >Continue shopping</a
                       >

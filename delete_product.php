@@ -1,12 +1,12 @@
 <?php
-session_start();
+include 'db_connect.php';
 
 
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
     header("Location: login.php");
     exit();
 }
-include 'db_connect.php';
+
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
