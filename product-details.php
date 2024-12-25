@@ -5,6 +5,7 @@ include 'db_connect.php';
         
 $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
+
 // Fetch product details
 $sql = "SELECT * FROM products WHERE id = ?";
 $stmt = $conn->prepare($sql);
@@ -12,6 +13,7 @@ $stmt->bind_param("i", $product_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $product = $result->fetch_assoc();
+
 
 if (!$product) {
     echo "<h3 class='text-center mt-5'>Product not found!</h3>";
@@ -124,7 +126,7 @@ if (!$product) {
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="button cart-button">
                                     <button class="btn btn-primary">
-                                    <a href="add_to_cart.php?id=<?= $row['id']; ?>" class="btn">
+                                    <a href="add_to_cart.php?id=<?= $product['id']; ?>" class="btn">
     <i class="lni lni-cart"></i> Add to Cart
 </a>
                                     </button>

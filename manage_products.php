@@ -35,7 +35,7 @@ $conn->close();
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-    <!-- Header -->
+
     <?php include 'header.php'; ?>
 
     <div class="container mt-4">

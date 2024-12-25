@@ -20,6 +20,7 @@
   </head>
   <body>
   <?php
+    include 'db_connect.php';
     include 'header.php';  
   ?>
     <div class="breadcrumbs">

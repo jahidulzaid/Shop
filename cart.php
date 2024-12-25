@@ -72,48 +72,86 @@ include 'db_connect.php';
             </div>
           </div>
 
-          <div class="cart-single-list">
-            <div class="row align-items-center">
-              <div class="col-lg-1 col-md-1 col-12">
-                <a href="product-details.php"
-                  ><img src="images/cart/01.jpg" alt="#"
-                /></a>
-              </div>
-              <div class="col-lg-4 col-md-3 col-12">
-                <h5 class="product-name">
-                  <a href="product-details.php">
-                    Canon EOS M50 Mirrorless Camera</a
-                  >
-                </h5>
-                <p class="product-des">
-                  <span><em>Type:</em> Mirrorless</span>
-                  <span><em>Color:</em> Black</span>
-                </p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <div class="count-input">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
+          <div class="container mt-5">
+
+
+            <?php if (!empty($_SESSION['cart']))
+
+        
+
+
+            ?>
+
+<?php
+if (isset($_GET['id'])) {
+  $id = intval($_GET['id']);
+  $sql = "SELECT * FROM products WHERE id = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+}
+?>
+
+
+            
+            <?php
+            
+            $total_price = 0;
+            $total_shipping = 0;
+            ?>
+
+            <?php foreach ($_SESSION['cart'] as $id => $item): ?>
+
+                <div class="cart-single-list">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-1 col-12">
+                            <a href="product-details.php?id=<?= $id; ?>">
+                                <img src="<?= htmlspecialchars($item['image_url']); ?>" alt="<?= htmlspecialchars($item['name']); ?>" />
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <h5 class="product-name">
+                                <a href="product-details.php?id=<?= $id; ?>">
+                                    <?= htmlspecialchars($item['name']); ?>
+                                </a>
+                            </h5>
+                            <p class="product-des">
+                                <span><em>Type:</em> <?= htmlspecialchars($item['type'] ?? 'N/A'); ?></span>
+                                <span><em>Color:</em> <?= htmlspecialchars($item['color'] ?? 'N/A'); ?></span>
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <div class="count-input">
+                                <select class="form-control">
+                                <?php for ($i = 1; $i <= 10; $i++): ?>
+                                        <option <?= $item['quantity'] == $i ? 'selected' : ''; ?>><?= $i; ?></option>
+                                <?php endfor; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <p>৳<?= number_format($item['price'], 2); ?></p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <p>৳<?= number_format($item['price'] * $item['quantity'], 2); ?></p>
+                        </div>
+                        <div class="col-lg-1 col-md-2 col-12">
+                            <a class="remove-item" href="remove_from_cart.php?id=<?= $id; ?>">
+                                <i class="lni lni-close"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>৳910.00</p>
-              </div>
-              <div class="col-lg-2 col-md-2 col-12">
-                <p>৳29.00</p>
-              </div>
-              <div class="col-lg-1 col-md-2 col-12">
-                <a class="remove-item" href="javascript:void(0)"
-                  ><i class="lni lni-close"></i
-                ></a>
-              </div>
-            </div>
+                <?php
+                $total_price += $item['price'] * $item['quantity'];
+                $total_shipping += 29; // Example shipping cost per item
+                ?>
+            <?php endforeach; ?>
           </div>
+
+
+
 
 
         </div>
@@ -123,23 +161,24 @@ include 'db_connect.php';
               <div class="row">
                 <div class="col-lg-8 col-md-6 col-12">
                   <div class="left">
-                    <div class="coupon">
+                    <!-- <div class="coupon">
                       <form action="#" target="_blank">
                         <input name="Coupon" placeholder="Enter Your Coupon" />
                         <div class="button">
                           <button class="btn">Apply Coupon</button>
                         </div>
                       </form>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                   <div class="right">
                     <ul>
-                      <li>Cart Subtotal<span>৳2560.00</span></li>
-                      <li>Shipping<span>Free</span></li>
-                      <li>You Save<span>৳29.00</span></li>
-                      <li class="last">You Pay<span>৳2531.00</span></li>
+                    <div class="cart-totals">
+                      <li>Total Price: <span>৳<?= number_format($total_price, 2); ?></span> </li>
+                      <li>Total Shipping: <span>৳<?= number_format($total_shipping, 2); ?></span></li>
+                      <li>Grand Total: <span>৳<?= number_format($total_price + $total_shipping, 2); ?></span></li>
+                    </div>
                     </ul>
                     <div class="button">
                       <a href="checkout.php" class="btn">Checkout</a>

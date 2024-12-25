@@ -211,7 +211,7 @@ $result = $conn->query($sql);
     </section>
 
 
-    <section class="special-offer section">
+    <!-- <section class="special-offer section">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -375,7 +375,7 @@ $result = $conn->query($sql);
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="home-product-list section">
       <div class="container">
@@ -537,9 +537,11 @@ $result = $conn->query($sql);
         <div class="row">
 
           <?php
-
+          
+          include 'db_connect.php';
           $sql = "SELECT id, title, category, description, image_url, created_at FROM news ORDER BY created_at DESC";
           $result = $conn->query($sql);
+          
 
           ?>
 

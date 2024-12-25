@@ -1,3 +1,5 @@
+
+
 <header class="header navbar-area">
       <div class="topbar">
         <div class="container"></div>
@@ -44,25 +46,24 @@
                   <div class="wishlist">
                     <a href="javascript:void(0)">
                       <i class="lni lni-heart"></i>
-                      <span class="total-items">0</span>
+                      
                     </a>
                   </div>
 
 
                   <div class="cart-items">
-                    <a href="javascript:void(0)" class="main-btn">
+                    <a href="cart.php" class="main-btn">
                       <i class="lni lni-cart"></i>
-                      <span class="total-items">0</span>
                     </a>
 
-                    <div class="shopping-item">
+                    <!-- <div class="shopping-item">
                       <div class="dropdown-cart-header">
                         <span>1 Items</span>
                         <a href="cart.php">View Cart</a>
                       </div>
 
                       <ul class="shopping-list">
-                        <!-- item as list -->
+    
                         <li>
                           <a
                             href="javascript:void(0)"
@@ -100,15 +101,18 @@
                             >Checkout</a
                           >
                         </div>
-                      </div>
+                      </div> -->
                     </div>
 
-                    
+
                   </div>
 
 
 
                 </div>
+
+
+                
                 <!-- cart end -->
               </div>
             </div>
@@ -121,33 +125,48 @@
         <div class="row align-items-center">
           <div class="col-lg-8 col-md-6 col-12">
             <div class="nav-inner">
-              <div class="mega-category-menu">
-                <span class="cat-button"
-                  ><i class="lni lni-menu"></i>All Categories</span
-                >
-                <ul class="sub-category">
-                  <li>
-                    <a href="product-list.php"
-                      >Electronics <i class="lni lni-chevron-right"></i
-                    ></a>
-                    <ul class="inner-sub-category">
-                      <li><a href="product-list.php">Digital Cameras</a></li>
 
-                      <li><a href="product-list.php">Camera Drones</a></li>
-                      <li><a href="product-list.php">Smart Watches</a></li>
-                      <li><a href="product-list.php">Headphones</a></li>
+            <?php
 
-                      <li><a href="product-list.php">Microphones</a></li>
-                    </ul>
-                  </li>
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-                  <li><a href="product-list.php">Computers & Tablets </a></li>
-                  <li><a href="product-list.php">Laptop </a></li>
-                  <li><a href="product-list.php">Smart Phone </a></li>
-                  <li><a href="product-list.php">Food</a></li>
-                  <li><a href="product-list.php">Cloth</a></li>
-                </ul>
-              </div>
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+$sql = "SELECT DISTINCT category FROM products";
+$categories = $conn->query($sql);
+?>
+
+<div class="mega-category-menu">
+    <span class="cat-button">
+        <i class="lni lni-menu"></i>All Categories
+    </span>
+    <ul class="sub-category">
+        <?php
+        if ($categories->num_rows > 0) {
+            while ($category = $categories->fetch_assoc()) {
+                echo '<li>';
+                echo '<a href="product-list.php?category=' . urlencode($category['category']) . '">';
+                echo htmlspecialchars($category['category']);
+                echo '</a>';
+                echo '</li>';
+            }
+        } else {
+            echo '<li>No categories found.</li>';
+        }
+        ?>
+    </ul>
+</div>
+
+<?php
+
+?>
+
+
+
+
 
               <nav class="navbar navbar-expand-lg">
                 <button
@@ -194,6 +213,9 @@
                         <li class="nav-item"><a href="login.php">Login</a></li>
                         <li class="nav-item">
                           <a href="register.php">Register</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="admin.php">Admin Panel</a>
                         </li>
                       </ul>
                     </li>

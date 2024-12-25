@@ -20,7 +20,9 @@
   </head>
   <body>
   <?php
+    include 'db_connect.php';
     include 'header.php';  
+    
   ?>
 
     <div class="breadcrumbs">
@@ -28,7 +30,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 col-12">
             <div class="breadcrumbs-content">
-              <h1 class="page-title">Shop Grid</h1>
+              <h1 class="page-title">Mini Shop</h1>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-12">
@@ -37,7 +39,7 @@
                 <a href="index.php"><i class="lni lni-home"></i> Home</a>
               </li>
               <li><a href="javascript:void(0)">Shop</a></li>
-              <li>Shop Grid</li>
+              <li>Mini Shop</li>
             </ul>
           </div>
         </div>
@@ -129,7 +131,7 @@
 
                     
                     <?php 
-                    include 'db_connect.php';
+
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
                     if ($conn->connect_error) {
@@ -193,7 +195,7 @@
 
                   
                   </div>
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-12">
                       <div class="pagination left">
                         <ul class="pagination-list">
@@ -211,7 +213,7 @@
                         </ul>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
 
 
@@ -224,8 +226,8 @@
                   aria-labelledby="nav-list-tab"                >
                   <div class="row">
 
-                  <?php 
-include 'db_connect.php';
+<?php 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {

@@ -20,6 +20,7 @@
   </head>
   <body>
   <?php
+    include 'db_connect.php';
     include 'header.php';  
   ?>
 
@@ -331,3 +332,6 @@ $conn->close();
     <script src="js/main.js"></script>
   </body>
 </html>
+<?php
+    include 'db_connect.php';
+  ?>

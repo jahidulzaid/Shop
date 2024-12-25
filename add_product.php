@@ -77,7 +77,10 @@ $conn->close();
 
 <body>
 
-    <?php include 'header.php'; ?>
+<?php
+    include 'db_connect.php';
+    include 'header.php';  
+  ?>
 
     <div class="container mt-4">
         <h1 class="text-center mb-4">Add New Product</h1>
