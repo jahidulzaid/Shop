@@ -66,13 +66,13 @@ $result = $conn->query($sql);
                 <div
                   class="single-slider"
                   style="
-                    background-image: url(images/hero/slider-bg1.jpg);
+                    background-image: url(images/hero/slider-bnr.jpg);
                   "
                 >
                   <div class="content">
                     <h2>
-                      <span>No restocking fee (৳35 savings)</span>
-                      M75 Sport Watch
+                      <span>No Delivery fee (৳35 savings)</span>
+                      Iphone 
                     </h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur elit, sed do
@@ -106,6 +106,7 @@ $result = $conn->query($sql);
                     </div>
                   </div>
                 </div>
+                
               </div>
               
             </div>
