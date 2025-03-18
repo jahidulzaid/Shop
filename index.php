@@ -50,11 +50,7 @@ $result = $conn->query($sql);
                       M75 Sport Watch
                     </h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur elit, sed do
-                      eiusmod tempor incididunt ut labore dolore magna aliqua.
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Ad repudiandae aliquam ipsam quod saepe eligendi velit est
-                      qui, quibusdam nemo!
+
                     </p>
                     <h3><span>Now Only</span> ৳320.99</h3>
                     <div class="button">
@@ -97,8 +93,7 @@ $result = $conn->query($sql);
                       Get the Best Deal on CCTV Camera
                     </h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur elit, sed do
-                      eiusmod tempor incididunt ut labore dolore magna aliqua.
+
                     </p>
                     <h3><span>Combo Only:</span> ৳590.00</h3>
                     <div class="button">
@@ -155,8 +150,7 @@ $result = $conn->query($sql);
             <div class="section-title">
               <h2>Trending Product</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
+                There are many variations of passages of Lorem Ipsum available
               </p>
             </div>
           </div>
@@ -211,8 +205,6 @@ $result = $conn->query($sql);
       </div>
     </section>
 
-
-    <!-- <section class="special-offer section">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -529,8 +521,7 @@ $result = $conn->query($sql);
             <div class="section-title">
               <h2>Our Latest News</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
+
               </p>
             </div>
           </div>
